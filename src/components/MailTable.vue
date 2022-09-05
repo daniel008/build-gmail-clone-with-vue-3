@@ -28,15 +28,13 @@
   import MailView from '@/components/MailView.vue';
   import ModalView from '@/components/ModalView.vue';
 
-  import { ref } from 'vue';
-
   export default {
     async setup(){
       let {data: emails} = await axios.get('http://localhost:3000/emails')
       return {
         format,
-        emails: ref(emails),
-        openedEmail: ref(null)
+        emails,
+        openedEmail: null
       }
     },
     components: {
